@@ -16,12 +16,12 @@
 		86EBA189273C02620037B851 /* ArticlesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA188273C02620037B851 /* ArticlesPresenter.swift */; };
 		86EBA18B273C02C70037B851 /* ArticlesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA18A273C02C70037B851 /* ArticlesRouter.swift */; };
 		86EBA18D273C03070037B851 /* ArticlesWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA18C273C03070037B851 /* ArticlesWorker.swift */; };
-		86EBA18F273C031B0037B851 /* ArticlesStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA18E273C031B0037B851 /* ArticlesStoreProtocol.swift */; };
 		86EBA191273C07A10037B851 /* ArticleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA190273C07A10037B851 /* ArticleModel.swift */; };
 		86EBA196273C1FC50037B851 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA195273C1FC50037B851 /* ArticleViewController.swift */; };
 		86EBA198273C1FD30037B851 /* ArticleRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA197273C1FD30037B851 /* ArticleRouter.swift */; };
 		86EBA19B273C203B0037B851 /* ArticlesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA19A273C203B0037B851 /* ArticlesConfigurator.swift */; };
 		86EBA19D273C20480037B851 /* ArticleConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA19C273C20480037B851 /* ArticleConfigurator.swift */; };
+		86EBA1A9273C36CF0037B851 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86EBA1A8273C36CF0037B851 /* ArticleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,12 +36,12 @@
 		86EBA188273C02620037B851 /* ArticlesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesPresenter.swift; sourceTree = "<group>"; };
 		86EBA18A273C02C70037B851 /* ArticlesRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesRouter.swift; sourceTree = "<group>"; };
 		86EBA18C273C03070037B851 /* ArticlesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesWorker.swift; sourceTree = "<group>"; };
-		86EBA18E273C031B0037B851 /* ArticlesStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesStoreProtocol.swift; sourceTree = "<group>"; };
 		86EBA190273C07A10037B851 /* ArticleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleModel.swift; sourceTree = "<group>"; };
 		86EBA195273C1FC50037B851 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		86EBA197273C1FD30037B851 /* ArticleRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleRouter.swift; sourceTree = "<group>"; };
 		86EBA19A273C203B0037B851 /* ArticlesConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesConfigurator.swift; sourceTree = "<group>"; };
 		86EBA19C273C20480037B851 /* ArticleConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleConfigurator.swift; sourceTree = "<group>"; };
+		86EBA1A8273C36CF0037B851 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,14 +83,14 @@
 		86EBA183273C00DF0037B851 /* Articles */ = {
 			isa = PBXGroup;
 			children = (
-				86EBA172273C004F0037B851 /* ArticlesViewController.swift */,
-				86EBA186273C024A0037B851 /* ArticlesInteractor.swift */,
-				86EBA188273C02620037B851 /* ArticlesPresenter.swift */,
-				86EBA18A273C02C70037B851 /* ArticlesRouter.swift */,
-				86EBA18C273C03070037B851 /* ArticlesWorker.swift */,
-				86EBA18E273C031B0037B851 /* ArticlesStoreProtocol.swift */,
-				86EBA190273C07A10037B851 /* ArticleModel.swift */,
-				86EBA19A273C203B0037B851 /* ArticlesConfigurator.swift */,
+				86EBA1A7273C36BB0037B851 /* ViewModel */,
+				86EBA1A6273C2F610037B851 /* Configurator */,
+				86EBA1A5273C2F420037B851 /* Model */,
+				86EBA1A4273C2F3D0037B851 /* Router */,
+				86EBA1A3273C2F370037B851 /* Worker */,
+				86EBA1A2273C2F320037B851 /* Interactor */,
+				86EBA1A1273C2F2E0037B851 /* View */,
+				86EBA1A0273C2F280037B851 /* Presenter */,
 			);
 			path = Articles;
 			sourceTree = "<group>";
@@ -117,9 +117,9 @@
 		86EBA194273C1FAD0037B851 /* Article */ = {
 			isa = PBXGroup;
 			children = (
-				86EBA195273C1FC50037B851 /* ArticleViewController.swift */,
-				86EBA197273C1FD30037B851 /* ArticleRouter.swift */,
-				86EBA19C273C20480037B851 /* ArticleConfigurator.swift */,
+				86EBA1AC273C42180037B851 /* Configurator */,
+				86EBA1AB273C420E0037B851 /* Router */,
+				86EBA1AA273C42060037B851 /* View */,
 			);
 			path = Article;
 			sourceTree = "<group>";
@@ -132,6 +132,94 @@
 				86EBA17C273C00510037B851 /* Info.plist */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		86EBA1A0273C2F280037B851 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA188273C02620037B851 /* ArticlesPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		86EBA1A1273C2F2E0037B851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA172273C004F0037B851 /* ArticlesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86EBA1A2273C2F320037B851 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA186273C024A0037B851 /* ArticlesInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		86EBA1A3273C2F370037B851 /* Worker */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA18C273C03070037B851 /* ArticlesWorker.swift */,
+			);
+			path = Worker;
+			sourceTree = "<group>";
+		};
+		86EBA1A4273C2F3D0037B851 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA18A273C02C70037B851 /* ArticlesRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		86EBA1A5273C2F420037B851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA190273C07A10037B851 /* ArticleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		86EBA1A6273C2F610037B851 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA19A273C203B0037B851 /* ArticlesConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		86EBA1A7273C36BB0037B851 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA1A8273C36CF0037B851 /* ArticleViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		86EBA1AA273C42060037B851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA197273C1FD30037B851 /* ArticleRouter.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		86EBA1AB273C420E0037B851 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA195273C1FC50037B851 /* ArticleViewController.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		86EBA1AC273C42180037B851 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				86EBA19C273C20480037B851 /* ArticleConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,10 +296,10 @@
 				86EBA187273C024A0037B851 /* ArticlesInteractor.swift in Sources */,
 				86EBA191273C07A10037B851 /* ArticleModel.swift in Sources */,
 				86EBA19B273C203B0037B851 /* ArticlesConfigurator.swift in Sources */,
+				86EBA1A9273C36CF0037B851 /* ArticleViewModel.swift in Sources */,
 				86EBA16F273C004F0037B851 /* AppDelegate.swift in Sources */,
 				86EBA18D273C03070037B851 /* ArticlesWorker.swift in Sources */,
 				86EBA198273C1FD30037B851 /* ArticleRouter.swift in Sources */,
-				86EBA18F273C031B0037B851 /* ArticlesStoreProtocol.swift in Sources */,
 				86EBA18B273C02C70037B851 /* ArticlesRouter.swift in Sources */,
 				86EBA196273C1FC50037B851 /* ArticleViewController.swift in Sources */,
 				86EBA171273C004F0037B851 /* SceneDelegate.swift in Sources */,
