@@ -1,19 +1,15 @@
 //
-//  ViewController.swift
+//  ArticleViewController.swift
 //  vmpendischukPW5
 //
 //  Created by Vladislav on 10.11.2021.
 //
 
+import Foundation
 import UIKit
 
-class ViewController: UIViewController {
-
+final class ArticleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
 }
-
