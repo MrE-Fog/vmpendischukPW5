@@ -74,6 +74,7 @@ class ArticlesViewController: UIViewController {
     @objc
     private func refreshTable() {
         articleViewModels.removeAll()
+        output.pageIndex = 1
         output.loadFreshNews()
     }
 }
@@ -143,5 +144,9 @@ extension ArticlesViewController: UITableViewDelegate {
             self.tableView.tableFooterView?.isHidden = false
             self.output.loadMoreNews()
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        router.navigateToArticle(atIndex: indexPath, animated: true)
     }
 }

@@ -61,7 +61,6 @@ class ArticleTableViewCell: UITableViewCell {
     
     func setupContent() {
         selectionStyle = .none
-        clipsToBounds = true
         
         contentView.addSubview(cellView)
         contentView.clipsToBounds = true

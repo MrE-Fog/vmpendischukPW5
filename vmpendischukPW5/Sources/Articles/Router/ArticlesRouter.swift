@@ -25,8 +25,9 @@ extension ArticlesRouter: ArticlesRouterLogic {
     func navigateToArticle(atIndex indexPath: IndexPath, animated: Bool) {
         if let articles = viewController?.output.articles, indexPath.row < articles.count {
             let selection = articles[indexPath.row]
+            guard let selectionURL = selection.articleUrl else { return }
             
-            // TODO: navigate to article web view controller.
+            viewController?.navigationController?.pushViewController(ArticleViewController(selectionURL), animated: true)
         }
     }
 }
