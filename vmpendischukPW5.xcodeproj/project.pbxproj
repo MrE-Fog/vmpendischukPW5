@@ -44,7 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		86EBA16B273C004F0037B851 /* vmpendischukPW5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vmpendischukPW5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86EBA16B273C004F0037B851 /* News.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = News.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EBA16E273C004F0037B851 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		86EBA170273C004F0037B851 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		86EBA172273C004F0037B851 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
@@ -104,7 +104,7 @@
 		86EBA16C273C004F0037B851 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86EBA16B273C004F0037B851 /* vmpendischukPW5.app */,
+				86EBA16B273C004F0037B851 /* News.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -288,7 +288,7 @@
 			);
 			name = vmpendischukPW5;
 			productName = vmpendischukPW5;
-			productReference = 86EBA16B273C004F0037B851 /* vmpendischukPW5.app */;
+			productReference = 86EBA16B273C004F0037B851 /* News.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -518,7 +518,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.edu.vmpendischukPW5;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = News;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -537,7 +537,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = ru.hse.edu.vmpendischukPW5;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = News;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
