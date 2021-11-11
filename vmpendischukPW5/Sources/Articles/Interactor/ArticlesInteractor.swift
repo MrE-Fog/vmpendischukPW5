@@ -94,6 +94,7 @@ final class ArticlesInteractor {
 extension ArticlesInteractor: ArticlesDataStore {
     /// Fetches news on the current page and updates the presented list.
     func loadFreshNews() {
+        articles.removeAll()
         isFetching = true
         worker.fetchNews(pageIndex: pageIndex, completion: onNewsLoad)
     }

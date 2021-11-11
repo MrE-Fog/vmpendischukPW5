@@ -263,7 +263,11 @@ extension ArticlesViewController: UITableViewDelegate {
         
         // Action appearance setup.
         action.backgroundColor = UIColor(white: 1, alpha: 0)
-        action.image = UIImage(named: "ShareIcon")
+        if self.traitCollection.userInterfaceStyle == .dark {
+            action.image = UIImage(named: "LightShareIcon")
+        } else {
+            action.image = UIImage(named: "DarkShareIcon")
+        }
         
         return UISwipeActionsConfiguration(actions: [action])
     }
