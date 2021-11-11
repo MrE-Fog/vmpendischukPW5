@@ -77,6 +77,10 @@ class ArticlesViewController: UIViewController {
         output.pageIndex = 1
         output.loadFreshNews()
     }
+    
+    private func handleShare(_ forIndex: IndexPath) {
+        router.sharePopover(atIndex: forIndex, animated: true)
+    }
 }
 
 extension ArticlesViewController: ArticlesViewControllerInputLogic {
@@ -148,5 +152,20 @@ extension ArticlesViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         router.navigateToArticle(atIndex: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .none
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let action = UIContextualAction(style: .normal, title: nil) { [weak self] (action, view, completionHandler) in
+            self?.handleShare(indexPath)
+            completionHandler(true)
+        }
+        action.backgroundColor = UIColor(white: 1, alpha: 0)
+        action.image = UIImage(named: "ShareIcon")
+        
+        return UISwipeActionsConfiguration(actions: [action])
     }
 }
