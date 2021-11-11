@@ -7,9 +7,9 @@
 
 import Foundation
 
-protocol ArticlesDataStore: ArticlesViewControllerOutput { }
+protocol ArticlesDataStore: ArticlesViewControllerOutputLogic { }
 
-protocol ArticlesInteractorOutput {
+protocol ArticlesInteractorOutputLogic {
     func presentArticles(models: [ArticleModel]?)
     func presentError()
 }
@@ -20,22 +20,28 @@ final class ArticlesInteractor {
             onNewsUpdate()
         }
     }
+    
     var pageIndex: Int = 1
-    var output: ArticlesInteractorOutput?
+    var isFetching: Bool = false
+    var output: ArticlesInteractorOutputLogic?
     var worker: ArticlesAPIWorkerLogic = ArticlesWorker()
     
-    init(_ output: ArticlesInteractorOutput?) {
+    init(_ output: ArticlesInteractorOutputLogic?) {
         self.output = output
     }
     
     func onNewsLoad(_ articles: [ArticleModel]?, _ error: Error?) {
+        isFetching = false
+        
         if let articles = articles {
             self.articles = articles
             return
         }
         
         if error != nil {
-            pageIndex -= 1
+            if pageIndex != 1 {
+                pageIndex -= 1
+            }
             output?.presentError()
         }
     }
@@ -47,11 +53,15 @@ final class ArticlesInteractor {
 
 extension ArticlesInteractor: ArticlesDataStore {
     func loadFreshNews() {
+        isFetching = true
         worker.fetchNews(pageIndex: pageIndex, completion: onNewsLoad)
     }
     
     func loadMoreNews() {
-        pageIndex += 1
-        worker.fetchNews(pageIndex: pageIndex, completion: onNewsLoad)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+            self.isFetching = true
+            self.pageIndex += 1
+            self.worker.fetchNews(pageIndex: self.pageIndex, completion: self.onNewsLoad)
+        }
     }
 }

@@ -16,6 +16,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         let nav = UINavigationController(rootViewController: ArticlesViewController())
+        nav.navigationBar.prefersLargeTitles = true
+        nav.navigationBar.largeTitleTextAttributes = [.font: UIFont(name: "Poppins-Bold", size: 32.0)!]
+        nav.navigationBar.titleTextAttributes = [.font: UIFont(name: "Poppins-SemiBold", size: 24.0)!]
+        
         window.rootViewController = nav
         self.window = window
         window.makeKeyAndVisible()

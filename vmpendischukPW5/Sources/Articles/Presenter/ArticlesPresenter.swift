@@ -7,20 +7,22 @@
 
 import Foundation
 
-protocol ArticlesPresenterInputLogic: ArticlesInteractorOutput { }
+protocol ArticlesPresenterInputLogic: ArticlesInteractorOutputLogic { }
 
 protocol ArticlesPresenterOutputLogic {
     func displayArticles(models: [ArticleViewModel]?)
     func displayError()
 }
 
-final class ArticlesPresenter: ArticlesPresenterInputLogic {
+final class ArticlesPresenter {
     var output: ArticlesPresenterOutputLogic?
     
     init(_ output: ArticlesPresenterOutputLogic?) {
         self.output = output
     }
-    
+}
+
+extension ArticlesPresenter: ArticlesPresenterInputLogic {
     func presentArticles(models: [ArticleModel]?) {
         let viewModels = models?.compactMap { model -> ArticleViewModel in
             return ArticleViewModel(title: model.title, announce: model.announce, img: model.img, articleURL: model.articleUrl)

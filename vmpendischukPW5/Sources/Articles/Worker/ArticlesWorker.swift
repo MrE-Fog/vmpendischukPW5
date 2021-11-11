@@ -20,16 +20,18 @@ final class ArticlesWorker: ArticlesAPIWorkerLogic {
         guard let url = getUrl(4, pageIndex) else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in
-            if let error = error {
-                completion(nil, error)
-                return
+            DispatchQueue.main.async {
+                if let error = error {
+                    completion(nil, error)
+                    return
+                }
+                
+                if let data = data {
+                    var articlePage = try? JSONDecoder().decode(ArticlePage.self, from: data)
+                    articlePage?.passTheRequestId()
+                    completion(articlePage?.news, nil)
+                }
             }
-            
-            if let data = data {
-                var articlePage = try? JSONDecoder().decode(ArticlePage.self, from: data)
-                articlePage?.passTheRequestId()
-                completion(articlePage?.news, nil)
-            }
-        }
+        }.resume()
     }
 }
